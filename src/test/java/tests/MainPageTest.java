@@ -2,14 +2,21 @@ package tests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Test;
 import pages.MainPage;
-
 import static org.junit.Assert.assertTrue;
 
 public class MainPageTest extends BaseTest {
 
     private MainPage mainPage;
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
     @Test
     @DisplayName("Переход к разделу «Булки»")
@@ -39,7 +46,6 @@ public class MainPageTest extends BaseTest {
     @Description("После клика на вкладку «Начинки» она становится активной")
     public void fillingsTabBecomesActive() {
         mainPage = new MainPage(driver).open();
-
         mainPage.switchToFillings();
 
         assertTrue("Вкладка «Начинки» должна быть активной", mainPage.isFillingsTabActive());

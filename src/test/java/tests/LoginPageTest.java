@@ -1,7 +1,6 @@
 package tests;
 
 import net.datafaker.Faker;
-import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import models.User;
 import org.junit.After;
@@ -10,7 +9,6 @@ import org.junit.Test;
 import pages.LoginPage;
 import pages.RegisterPage;
 import pages.TestConfig;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertEquals;
@@ -44,6 +42,9 @@ public class LoginPageTest extends BaseTest {
     public void tearDown() {
         if (accessToken != null) {
             deleteUser(accessToken).then().statusCode(202);
+        }
+        if (driver != null) {
+            driver.quit();
         }
     }
 

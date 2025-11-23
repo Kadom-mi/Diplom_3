@@ -27,11 +27,15 @@ public abstract class BaseTest {
         options.addArguments("--start-maximized");
 
         if ("yandex".equals(BROWSER)) {
-            String yandexBinary = "C:\\Users\\Vrabshe\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe";
+            System.setProperty
+                    ("webdriver.chrome.driver", "C:\\Users\\Vrabshe\\Downloads\\yandexdriver\\yandexdriver.exe");
+            String yandexBinary =
+                    "C:\\Users\\Vrabshe\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe";
             options.setBinary(yandexBinary);
         }
-
-        WebDriverManager.chromedriver().setup();
+        else {
+            WebDriverManager.chromedriver().setup();
+        }
         driver = new ChromeDriver(options);
     }
 

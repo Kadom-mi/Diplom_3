@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import pages.RegisterPage;
 import pages.TestConfig;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static steps.ApiClients.*;
@@ -35,6 +34,9 @@ public class RegisterPageTest extends BaseTest {
     public void tearDown() {
         if (accessToken != null) {
             deleteUser(accessToken);
+        }
+        if (driver != null) {
+            driver.quit();
         }
     }
 
