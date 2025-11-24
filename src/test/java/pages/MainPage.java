@@ -28,6 +28,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    @Step("Проверка активности вкладки с локатором {tabLocator}")
     private boolean isTabActive(By tabLocator) {
         WebElement tab = waitForVisibility(tabLocator);
         new WebDriverWait(driver, Duration.ofSeconds(5))
@@ -35,14 +36,17 @@ public class MainPage extends BasePage {
         return tab.getAttribute("class").contains(ACTIVE_TAB_CLASS);
     }
 
+    @Step("Проверка активности вкладки Булки")
     public boolean isBunsTabActive() {
         return isTabActive(BUNS_TAB);
     }
 
+    @Step("Проверка активности вкладки Соусы")
     public boolean isSaucesTabActive() {
         return isTabActive(SAUCES_TAB);
     }
 
+    @Step("Проверка активности вкладки Начинки")
     public boolean isFillingsTabActive() {
         return isTabActive(FILLINGS_TAB);
     }

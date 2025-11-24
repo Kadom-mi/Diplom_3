@@ -61,6 +61,7 @@ public class RegisterPage extends BasePage {
         click(LOGIN_LINK);
     }
 
+    @Step("Проверка видимости ошибки пароля")
     public boolean isPasswordErrorVisible() {
         try {
             return waitForVisibility(PASSWORD_ERROR).isDisplayed();
