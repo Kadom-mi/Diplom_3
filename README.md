@@ -1,7 +1,6 @@
 # Автоматизация тестов для Stellar Burgers. Автотесты для UI
 
-[Веб‑приложение Stellar Burgers](https://stellarburgers.education-services.ru/)  
-[Github](https://github.com/Kadom-mi/Diplom_3)
+[Веб‑приложение Stellar Burgers](https://stellarburgers.education-services.ru/) 
 
 ## Подготовка проекта
 - Создать Maven‑проект и подключить следующие библиотеки:
